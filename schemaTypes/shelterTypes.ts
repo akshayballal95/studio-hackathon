@@ -34,7 +34,20 @@ export const shelterType = defineType({
       defineField({
         name: 'weekendHours',
         title: 'Weekend Opening Hours',
-        type: 'string',
+        type: 'array',
+        of: [{
+          type: 'object',
+          fields: [
+            {name: 'day', type: 'string'},
+            {name: 'hours', type: 'string'},
+            {name: 'requiresAppointment', type: 'boolean'},
+          ],
+        }],
+      }),
+      defineField({
+        name: 'needToKnow',
+        title: 'What do you need to know?',
+        type: 'markdown',
       }),
       defineField({
         name: 'emergencyContact',
@@ -75,6 +88,7 @@ export const shelterType = defineType({
           {name: 'street', type: 'string'},
           {name: 'postalCode', type: 'string'},
           {name: 'city', type: 'string'},
+          {name: 'googleMapsLink', type: 'url'},
         ],
       }),
       defineField({

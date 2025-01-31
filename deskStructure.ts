@@ -34,7 +34,7 @@ export const deskStructure = (S: StructureBuilder) =>
                 .child(
                   S.documentList()
                     .title('Day Shelters')
-                    .filter('_type == "shelter" && shelterType == "day"')
+                    .filter('_type == "shelter" && shelterType == "day')
                 ),
               
               // Night Shelters
