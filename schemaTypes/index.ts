@@ -1,1 +1,3 @@
-export const schemaTypes = []
+import {shelterType} from './shelterTypes'
+
+export const schemaTypes = [shelterType]
