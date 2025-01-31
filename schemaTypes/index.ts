@@ -1,3 +1,4 @@
 import {shelterType} from './shelterTypes'
 import { dentistType } from './dentistsType'
-export const schemaTypes = [shelterType, dentistType]
+import { foodClothingType } from './foodClothingType'
+export const schemaTypes = [shelterType, dentistType, foodClothingType]
