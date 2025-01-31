@@ -12,6 +12,14 @@ export const deskStructure = (S: StructureBuilder) =>
             .title('Posts')
             .filter('_type == "post"')
         ),
+
+      S.listItem()
+        .title('Dentists')
+        .child(
+        S.documentList()
+          .title('Dentists')
+          .filter('_type == "dentist"')
+      ),
       
       // Shelters category
       S.listItem()

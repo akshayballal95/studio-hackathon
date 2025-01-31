@@ -1,9 +1,9 @@
-import { defineField, defineType } from "sanity";
+import { defineField, defineType } from "sanity"; 
 
-// Create a base shelter type with shared fields
-export const shelterType = defineType({
-    name: 'shelter',
-    title: 'Shelter',
+// Create a base dentist type with shared fields
+export const dentistType = defineType({ 
+    name: 'dentist',
+    title: 'Dentist',
     type: 'document',
     fields: [
       defineField({
@@ -19,36 +19,36 @@ export const shelterType = defineType({
         validation: (rule) => rule.required(),
       }),
       defineField({
-        name: 'weekdayHours',
-        title: 'Weekday Opening Hours',
+        name: 'operatingHours',
+        title: 'Operating Hours',
         type: 'array',
         of: [{
           type: 'object',
           fields: [
-            {name: 'day', type: 'string'},
-            {name: 'hours', type: 'string'},
-            {name: 'requiresAppointment', type: 'boolean'},
+            { name: 'label', title: 'Label', type: 'string', description: 'Specify the time range (e.g., Monday-Friday, Weekends, Holidays)' },
+            { name: 'hours', title: 'Hours', type: 'string' },
+            { name: 'requiresAppointment', title: 'Requires Appointment', type: 'boolean' },
           ],
         }],
-      }),
-      defineField({
-        name: 'weekendHours',
-        title: 'Weekend Opening Hours',
-        type: 'string',
       }),
       defineField({
         name: 'emergencyContact',
         title: 'Emergency Contact',
         type: 'object',
         fields: [
-          {name: 'phone', type: 'string'},
-          {name: 'hours', type: 'string'},
+          { name: 'phone', title: 'Phone', type: 'string' },
+          { name: 'hours', title: 'Hours', type: 'string' },
         ],
       }),
       defineField({
         name: 'website',
         title: 'Website',
         type: 'url',
+      }),
+      defineField({
+        name: 'needToKnow',
+        title: 'What do you need to know?',
+        type: 'markdown',
       }),
       defineField({
         name: 'email',
@@ -62,8 +62,8 @@ export const shelterType = defineType({
         of: [{
           type: 'object',
           fields: [
-            {name: 'type', type: 'string'},
-            {name: 'number', type: 'string'},
+            { name: 'type', title: 'Type', type: 'string', description: 'E.g., Reception, Emergency' },
+            { name: 'number', title: 'Number', type: 'string' },
           ],
         }],
       }),
@@ -72,9 +72,9 @@ export const shelterType = defineType({
         title: 'Address',
         type: 'object',
         fields: [
-          {name: 'street', type: 'string'},
-          {name: 'postalCode', type: 'string'},
-          {name: 'city', type: 'string'},
+          { name: 'street', title: 'Street', type: 'string' },
+          { name: 'postalCode', title: 'Postal Code', type: 'string' },
+          { name: 'city', title: 'City', type: 'string' },
         ],
       }),
       defineField({
@@ -82,18 +82,5 @@ export const shelterType = defineType({
         title: 'Logo',
         type: 'image',
       }),
-      defineField({
-        name: 'shelterType',
-        title: 'Shelter Type',
-        type: 'string',
-        options: {
-          list: [
-            {title: 'Day Shelter', value: 'day'},
-            {title: 'Night Shelter', value: 'night'},
-          ],
-        },
-        validation: (rule) => rule.required(),
-      }),
     ],
-  })
-  
+});
