@@ -46,5 +46,32 @@ export const deskStructure = (S: StructureBuilder) =>
                     .filter('_type == "shelter" && shelterType == "night"')
                 )
             ])
+        ),
+
+      // Food&Clothing category
+      S.listItem()
+        .title('Food and Clothing')
+        .child(
+          S.list()
+            .title('Food and Clothing')
+            .items([
+              // Day Shelters
+              S.listItem()
+                .title('Food')
+                .child(
+                  S.documentList()
+                    .title('Food')
+                    .filter('_type == "foodAndClothing" && foodOrClothing == "food"')
+                ),
+              
+              // Night Shelters
+              S.listItem()
+                .title('Clothing')
+                .child(
+                  S.documentList()
+                    .title('Clothing')
+                    .filter('_type == "foodAndClothing" && foodOrClothing == "clothing"')
+                )
+            ])
         )
     ]) 
