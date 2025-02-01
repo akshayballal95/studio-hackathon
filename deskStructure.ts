@@ -12,7 +12,6 @@ export const deskStructure = (S: StructureBuilder) =>
             .title('Posts')
             .filter('_type == "post"')
         ),
-
       S.listItem()
         .title('Dentists')
         .child(
@@ -27,14 +26,27 @@ export const deskStructure = (S: StructureBuilder) =>
           .title('Legal')
           .filter('_type == "legal"'),
         ),
-        S.listItem()
+      S.listItem()
         .title('Work')
         .child(
         S.documentList()
           .title('Labour Rights Information')
           .filter('_type == "work"')
       ),
-      
+      S.listItem()
+        .title('Where to go first')
+        .child(
+        S.documentList()
+          .title('Where to go first')
+          .filter('_type == "whereToGo"')
+      ),
+      S.listItem()
+        .title('Search Missing Relatives')
+        .child(
+        S.documentList()
+          .title('Find Family')
+          .filter('_type == "findFamily"')
+      ),
       // Shelters category
       S.listItem()
         .title('Shelters')
@@ -191,8 +203,114 @@ export const deskStructure = (S: StructureBuilder) =>
             .title('Labour Exploitation')
             .filter('_type == "labourExploitation"')
           ),
-
+        ]) 
+      ),
+      S.listItem()
+      .title("Asylum and Return")
+      .child(
+        S.list()
+        .title('Asylum and Return')
+        .items([
+          S.listItem()
+          .title('First Asylum Request')
+          .child(
+            S.documentList()
+            .title('First Asylum Request')
+            .filter('_type == "firstAsylumRequest"')
+          ),
+          S.listItem()
+          .title('Legal Advice After Rejection')
+          .child(
+            S.documentList()
+            .title('Legal Advice After Rejection')
+            .filter('_type == "afterRejection"')
+          ),
+          S.listItem()
+          .title('Support with Voluntary Return')
+          .child(
+            S.documentList()
+            .title('Support with Voluntary Return')
+            .filter('_type == "voluntaryReturn"')
+          ),
         ])
-         
+      ),
+      S.listItem()
+      .title("Support for Women")
+      .child(
+        S.list()
+        .title('Support for Women')
+        .items([
+          S.listItem()
+          .title('Pregnancy Care')
+          .child(
+            S.documentList()
+            .title('Pregnancy Care')
+            .filter('_type == "pregnancyCare"')
+          ),
+          S.listItem()
+          .title('Birth Control and Menstruation')
+          .child(
+            S.documentList()
+            .title('Birth Control and Menstruation')
+            .filter('_type == "birthControlAndMenstruation"')
+          ),
+          S.listItem()
+          .title('Organizations that can help')
+          .child(
+            S.documentList()
+            .title('Organizations that can help')
+            .filter('_type == "organizationsThatCanHelp"')
+          ),
+          S.listItem()
+          .title('Abortion')
+          .child(
+            S.documentList()
+            .title('Abortion')
+            .filter('_type == "abortion"')
+          ),
+        ])
+      ),
+      S.listItem()
+      .title("Children & Youth")
+      .child(
+        S.list()
+        .title('Children & Youth')
+        .items([
+          S.listItem()
+          .title('Care')
+          .child(
+            S.documentList()
+            .title('Care')
+            .filter('_type == "childrensCare"')
+          ),
+          S.listItem()
+          .title('Children\'s Rights')
+          .child(
+            S.documentList()
+            .title('Children\'s Rights')
+            .filter('_type == "childrensRights"')
+          ),
+          S.listItem()
+          .title('Financial Help')
+          .child(
+            S.documentList()
+            .title('Financial Help')
+            .filter('_type == "financialHelp"')
+          ),
+        ])
+      ),
+      S.listItem()
+        .title('Helpdesk')
+        .child(
+        S.documentList()
+          .title('Helpdesk & Social Support')
+          .filter('_type == "helpdesk"')
+      ),
+      S.listItem()
+        .title('Courses & Activities')
+        .child(
+        S.documentList()
+          .title('Activities')
+          .filter('_type == "activities"')
       ),
     ]) 

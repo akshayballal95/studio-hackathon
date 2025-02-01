@@ -1,14 +1,14 @@
 import { defineField, defineType } from "sanity"; 
 
-// Create a base dentist type with shared fields
-export const dentistType = defineType({ 
-    name: 'dentist',
-    title: 'Dentist',
+// Create a base activities type with shared fields
+export const activitiesType = defineType({ 
+    name: 'activities',
+    title: 'Activities',
     type: 'document',
     fields: [
       defineField({
         name: 'name',
-        title: 'Dentist Name',
+        title: 'Activities Name',
         type: 'string',
         validation: (rule) => rule.required(),
       }),
@@ -30,15 +30,6 @@ export const dentistType = defineType({
             { name: 'requiresAppointment', title: 'Requires Appointment', type: 'boolean' },
           ],
         }],
-      }),
-      defineField({
-        name: 'emergencyContact',
-        title: 'Emergency Contact',
-        type: 'object',
-        fields: [
-          { name: 'phone', title: 'Phone', type: 'string' },
-          { name: 'hours', title: 'Hours', type: 'string' },
-        ],
       }),
       defineField({
         name: 'website',
@@ -75,7 +66,7 @@ export const dentistType = defineType({
           { name: 'street', title: 'Street', type: 'string' },
           { name: 'postalCode', title: 'Postal Code', type: 'string' },
           { name: 'city', title: 'City', type: 'string' },
-          {name: 'googleMapsLink', type: 'url'},
+          { name: 'googleMapsLink', type: 'url' },
         ],
       }),
       defineField({

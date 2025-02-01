@@ -75,6 +75,7 @@ export const workType = defineType({
           { name: 'street', title: 'Street', type: 'string' },
           { name: 'postalCode', title: 'Postal Code', type: 'string' },
           { name: 'city', title: 'City', type: 'string' },
+          {name: 'googleMapsLink', type: 'url'},
         ],
       }),
       defineField({

@@ -1,7 +1,6 @@
 import { defineField, defineType } from "sanity"; 
 
-// Create a base health service type with shared fields
-const baseHealthServiceFields = [
+const baseAsylumFields = [
   defineField({
     name: 'name',
     title: 'Service Name',
@@ -71,7 +70,6 @@ const baseHealthServiceFields = [
       { name: 'street', title: 'Street', type: 'string' },
       { name: 'postalCode', title: 'Postal Code', type: 'string' },
       { name: 'city', title: 'City', type: 'string' },
-      {name: 'googleMapsLink', type: 'url'},
     ],
   }),
   defineField({
@@ -81,52 +79,23 @@ const baseHealthServiceFields = [
   }),
 ];
 
-// Create specific types for each category
-export const healthAndWellbeingType = defineType({
-  name: 'healthAndWellbeing',
-  title: 'Healthcare Documentation',
+export const firstAsylumRequestType = defineType({
+  name: 'firstAsylumRequest',
+  title: 'First Asylum Request',
   type: 'document',
-  fields: baseHealthServiceFields,
+  fields: baseAsylumFields,
 });
 
-export const emergencyLinesType = defineType({
-  name: 'emergencyLines',
-  title: 'Emergency Lines',
+export const legalAdviceAfterRejectionType = defineType({
+  name: 'afterRejection',
+  title: 'Legal Advice After Rejection',
   type: 'document',
-  fields: baseHealthServiceFields,
+  fields: baseAsylumFields,
 });
 
-export const doctorsType = defineType({
-  name: 'doctors',
-  title: 'Doctors',
+export const supportWithVoluntaryReturnType = defineType({
+  name: 'voluntaryReturn',
+  title: 'Support with Voluntary Return',
   type: 'document',
-  fields: baseHealthServiceFields,
-});
-
-export const medicationType = defineType({
-  name: 'medication',
-  title: 'Medication',
-  type: 'document',
-  fields: baseHealthServiceFields,
-});
-
-export const sexualHealthType = defineType({
-  name: 'sexualHealth',
-  title: 'Sexual Health',
-  type: 'document',
-  fields: baseHealthServiceFields,
-});
-
-export const mentalWellbeingType = defineType({
-  name: 'mentalWellbeing',
-  title: 'Mental Wellbeing',
-  type: 'document',
-  fields: baseHealthServiceFields,
-});
-
-export const hygieneType = defineType({
-  name: 'hygiene',
-  title: 'Hygiene',
-  type: 'document',
-  fields: baseHealthServiceFields,
+  fields: baseAsylumFields,
 });

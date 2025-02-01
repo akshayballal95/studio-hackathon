@@ -1,7 +1,6 @@
 import { defineField, defineType } from "sanity"; 
 
-// Create a base health service type with shared fields
-const baseHealthServiceFields = [
+const baseChildrenFields = [
   defineField({
     name: 'name',
     title: 'Service Name',
@@ -81,52 +80,23 @@ const baseHealthServiceFields = [
   }),
 ];
 
-// Create specific types for each category
-export const healthAndWellbeingType = defineType({
-  name: 'healthAndWellbeing',
-  title: 'Healthcare Documentation',
+export const childrensCareType = defineType({
+  name: 'childrensCare',
+  title: 'Care',
   type: 'document',
-  fields: baseHealthServiceFields,
+  fields: baseChildrenFields,
 });
 
-export const emergencyLinesType = defineType({
-  name: 'emergencyLines',
-  title: 'Emergency Lines',
+export const childrensRightsType = defineType({
+  name: 'childrensRights',
+  title: 'Children\'s Rights',
   type: 'document',
-  fields: baseHealthServiceFields,
+  fields: baseChildrenFields,
 });
 
-export const doctorsType = defineType({
-  name: 'doctors',
-  title: 'Doctors',
+export const financialHelpType = defineType({
+  name: 'financialHelp',
+  title: 'Financial Help',
   type: 'document',
-  fields: baseHealthServiceFields,
-});
-
-export const medicationType = defineType({
-  name: 'medication',
-  title: 'Medication',
-  type: 'document',
-  fields: baseHealthServiceFields,
-});
-
-export const sexualHealthType = defineType({
-  name: 'sexualHealth',
-  title: 'Sexual Health',
-  type: 'document',
-  fields: baseHealthServiceFields,
-});
-
-export const mentalWellbeingType = defineType({
-  name: 'mentalWellbeing',
-  title: 'Mental Wellbeing',
-  type: 'document',
-  fields: baseHealthServiceFields,
-});
-
-export const hygieneType = defineType({
-  name: 'hygiene',
-  title: 'Hygiene',
-  type: 'document',
-  fields: baseHealthServiceFields,
+  fields: baseChildrenFields,
 });
