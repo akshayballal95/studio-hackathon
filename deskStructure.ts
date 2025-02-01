@@ -55,6 +55,67 @@ export const deskStructure = (S: StructureBuilder) =>
             ])
         ),
 
+      S.listItem()
+      .title("Health and Wellbeing")
+      .child(
+        S.list()
+        .title('Health and Wellbeing')
+        .items([
+          S.listItem()
+          .title('Documents explaining healthcare')
+          .child(
+            S.documentList()
+            .title('Documents explaining healthcare')
+            .filter('_type == "healthAndWellbeing"')
+          ),
+          S.listItem()
+          .title('Emergency Lines')
+          .child(
+            S.documentList()
+            .title('Emergency Lines')
+            .filter('_type == "emergencyLines"')
+          ),
+          S.listItem()
+          .title('Doctor')
+          .child(
+            S.documentList()
+            .title('Doctor')
+            .filter('_type == "doctors"')
+          ),
+          S.listItem()
+          .title('Medication')
+          .child(
+            S.documentList()
+            .title('Medication')
+            .filter('_type == "medication"')
+          ),
+          S.listItem()
+          .title('Sexual Health')
+          .child(
+            S.documentList()
+            .title('Sexual Health')
+            .filter('_type == "sexualHealth"')
+          ),
+          S.listItem()
+          .title('Mental Wellbeing')
+          .child(
+            S.documentList()
+            .title('Mental Wellbeing')
+            .filter('_type == "mentalWellbeing"')
+          ),
+          S.listItem()
+          .title('Hygiene')
+          .child(
+            S.documentList()
+            .title('Hygiene')
+            .filter('_type == "hygiene"')
+          ),
+
+        ])
+         
+      ),
+
+
       // Food&Clothing category
       S.listItem()
         .title('Food and Clothing')
