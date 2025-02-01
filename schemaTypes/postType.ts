@@ -22,7 +22,7 @@ export const postType = defineType({
       initialValue: () => new Date().toISOString(),
       validation: (rule) => rule.required(),
     }),
-    defineField({
+    defineField({   
       name: 'image',
       type: 'image',
     }),

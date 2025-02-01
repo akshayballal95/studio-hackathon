@@ -56,7 +56,7 @@ export const shelterType = defineType({
         fields: [
           {name: 'phone', type: 'string'},
           {name: 'hours', type: 'string'},
-        ],
+        ],  
       }),
       defineField({
         name: 'website',

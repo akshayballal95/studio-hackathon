@@ -4,6 +4,7 @@ import {visionTool} from '@sanity/vision'
 import {schemaTypes} from './schemaTypes'
 import {deskStructure} from './deskStructure'
 import {markdownSchema} from 'sanity-plugin-markdown'
+import { embeddingsIndexDashboard, embeddingsIndexReferenceInput } from '@sanity/embeddings-index-ui'
 export default defineConfig({
   name: 'default',
   title: 'hackathon',
@@ -16,7 +17,13 @@ export default defineConfig({
       structure: deskStructure
     }),
     markdownSchema(),
-    visionTool()
+    visionTool(),
+    embeddingsIndexDashboard(),
+    embeddingsIndexReferenceInput({
+      indexName: 'hackathon-index',
+      maxResults: 10,
+      searchMode: 'embeddings',
+    }),
   ],
 
   schema: {
