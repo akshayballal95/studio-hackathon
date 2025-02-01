@@ -1,6 +1,6 @@
 import { defineField, defineType } from "sanity"; 
 
-const baseWomenFields = [
+const baseChildrenFields = [
   defineField({
     name: 'name',
     title: 'Service Name',
@@ -80,30 +80,23 @@ const baseWomenFields = [
   }),
 ];
 
-export const pregnancyCareType = defineType({
-  name: 'pregnancyCare',
-  title: 'Pregnancy Care',
+export const childrensCareType = defineType({
+  name: 'childrensCare',
+  title: 'Care',
   type: 'document',
-  fields: baseWomenFields,
+  fields: baseChildrenFields,
 });
 
-export const birthControlAndMenstruationType = defineType({
-  name: 'birthControlAndMenstruation',
-  title: 'Birth Control and Menstruation Products',
+export const childrensRightsType = defineType({
+  name: 'childrensRights',
+  title: 'Children\'s Rights',
   type: 'document',
-  fields: baseWomenFields,
+  fields: baseChildrenFields,
 });
 
-export const organizationsThatCanHelpType = defineType({
-  name: 'organizationsThatCanHelp',
-  title: 'Organizations that can help',
+export const financialHelpType = defineType({
+  name: 'financialHelp',
+  title: 'Financial Help',
   type: 'document',
-  fields: baseWomenFields,
-});
-
-export const abortionType = defineType({
-  name: 'abortion',
-  title: 'Abortion',
-  type: 'document',
-  fields: baseWomenFields,
+  fields: baseChildrenFields,
 });

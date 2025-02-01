@@ -12,7 +12,6 @@ export const deskStructure = (S: StructureBuilder) =>
             .title('Posts')
             .filter('_type == "post"')
         ),
-
       S.listItem()
         .title('Dentists')
         .child(
@@ -41,7 +40,13 @@ export const deskStructure = (S: StructureBuilder) =>
           .title('Where to go first')
           .filter('_type == "whereToGo"')
       ),
-
+      S.listItem()
+        .title('Search Missing Relatives')
+        .child(
+        S.documentList()
+          .title('Find Family')
+          .filter('_type == "findFamily"')
+      ),
       // Shelters category
       S.listItem()
         .title('Shelters')
@@ -253,7 +258,7 @@ export const deskStructure = (S: StructureBuilder) =>
           .title('Organizations that can help')
           .child(
             S.documentList()
-            .title('Legal Advice After Rejection')
+            .title('Organizations that can help')
             .filter('_type == "organizationsThatCanHelp"')
           ),
           S.listItem()
@@ -264,5 +269,48 @@ export const deskStructure = (S: StructureBuilder) =>
             .filter('_type == "abortion"')
           ),
         ])
+      ),
+      S.listItem()
+      .title("Children & Youth")
+      .child(
+        S.list()
+        .title('Children & Youth')
+        .items([
+          S.listItem()
+          .title('Care')
+          .child(
+            S.documentList()
+            .title('Care')
+            .filter('_type == "childrensCare"')
+          ),
+          S.listItem()
+          .title('Children\'s Rights')
+          .child(
+            S.documentList()
+            .title('Children\'s Rights')
+            .filter('_type == "childrensRights"')
+          ),
+          S.listItem()
+          .title('Financial Help')
+          .child(
+            S.documentList()
+            .title('Financial Help')
+            .filter('_type == "financialHelp"')
+          ),
+        ])
+      ),
+      S.listItem()
+        .title('Helpdesk')
+        .child(
+        S.documentList()
+          .title('Helpdesk & Social Support')
+          .filter('_type == "helpdesk"')
+      ),
+      S.listItem()
+        .title('Courses & Activities')
+        .child(
+        S.documentList()
+          .title('Activities')
+          .filter('_type == "activities"')
       ),
     ]) 

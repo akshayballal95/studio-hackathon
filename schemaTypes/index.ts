@@ -4,6 +4,9 @@ import {foodClothingType} from './foodClothingType'
 import {legalType} from './legalType'
 import {workType} from './workType'
 import {whereToGoType} from './whereToGoType'
+import {findFamilyType} from './findFamilyType'
+import {helpdeskType} from './helpdeskType'
+import {activitiesType} from './acitivitiesType'
 import {
   healthAndWellbeingType,
   emergencyLinesType,
@@ -35,6 +38,12 @@ import {
     abortionType,
   } from './womenType'
 
+import {
+    childrensCareType,
+    childrensRightsType,
+    financialHelpType,
+} from './childrenType'
+
 export const schemaTypes = [
   shelterType,
   dentistType,
@@ -61,6 +70,12 @@ export const schemaTypes = [
   birthControlAndMenstruationType,
   organizationsThatCanHelpType,
   abortionType,
+  childrensCareType,
+  childrensRightsType,
+  financialHelpType,
+  findFamilyType,
+  helpdeskType,
+  activitiesType,
 ]
 
 console.log(schemaTypes)
