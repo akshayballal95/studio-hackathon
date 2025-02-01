@@ -12,6 +12,18 @@ export const foodClothingType = defineType({
         validation: (rule) => rule.required(),
       }),
       defineField({
+        name: 'foodOrClothing',
+        title: 'Food or Clothing',
+        type: 'string',
+        options: {
+          list: [
+            {title: 'Food', value: 'food'},
+            {title: 'Clothing', value: 'clothing'},
+          ],
+        },
+        validation: (rule) => rule.required(),
+      }),
+      defineField({
         name: 'description',
         title: 'Description',
         type: 'markdown',
@@ -80,16 +92,9 @@ export const foodClothingType = defineType({
         description: 'Provide important details, like documents required or rules to follow.',
       }),
       defineField({
-        name: 'foodOrClothing',
-        title: 'Food or Clothing',
-        type: 'string',
-        options: {
-          list: [
-            {title: 'Food', value: 'food'},
-            {title: 'Clothing', value: 'clothing'},
-          ],
-        },
-        validation: (rule) => rule.required(),
+        name: 'logo',
+        title: 'Logo',
+        type: 'image',
       }),
     ],
 });

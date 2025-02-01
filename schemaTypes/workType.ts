@@ -18,19 +18,6 @@ export const workType = defineType({
         validation: (rule) => rule.required(),
       }),
       defineField({
-        name: 'operatingHours',
-        title: 'Operating Hours',
-        type: 'array',
-        of: [{
-          type: 'object',
-          fields: [
-            { name: 'label', title: 'Label', type: 'string', description: 'Specify the time range (e.g., Monday-Friday, Weekends, Holidays)' },
-            { name: 'hours', title: 'Hours', type: 'string' },
-            { name: 'requiresAppointment', title: 'Requires Appointment', type: 'boolean' },
-          ],
-        }],
-      }),
-      defineField({
         name: 'needToKnow',
         title: 'What do you need to know?',
         type: 'markdown',
@@ -66,17 +53,6 @@ export const workType = defineType({
             },
           ],
         }],
-      }),      
-      defineField({
-        name: 'address',
-        title: 'Address',
-        type: 'object',
-        fields: [
-          { name: 'street', title: 'Street', type: 'string' },
-          { name: 'postalCode', title: 'Postal Code', type: 'string' },
-          { name: 'city', title: 'City', type: 'string' },
-          {name: 'googleMapsLink', type: 'url'},
-        ],
       }),
       defineField({
         name: 'logo',
