@@ -149,47 +149,50 @@ export const deskStructure = (S: StructureBuilder) =>
                 )
             ])
         ),
-        S.listItem()
+      // Safety and protection thingies
+      S.listItem()
+      .title("Safety and Protection")
+      .child(
+        S.list()
         .title('Safety and Protection')
-        .child(
-          S.list()
-            .title('Safety and Protection')
-            .items([
-              S.listItem()
-                .title('Emergency Services & Police')
-                .child(
-                  S.documentList()
-                    .title('Emergency Services & Police')
-                    .filter('_type == "safetyAndProtection" && safetyType == "emergencyPolice"')
-                ),
-              S.listItem()
-                .title('Domestic Violence')
-                .child(
-                  S.documentList()
-                    .title('Domestic Violence')
-                    .filter('_type == "safetyAndProtection" && safetyType == "domesticViolence"')
-                ),
-              S.listItem()
-                .title('Criminal Exploitation')
-                .child(
-                  S.documentList()
-                    .title('Criminal Exploitation')
-                    .filter('_type == "safetyAndProtection" && safetyType == "criminalExploitation"')
-                ),
-              S.listItem()
-                .title('Sexual Exploitation')
-                .child(
-                  S.documentList()
-                    .title('Sexual Exploitation')
-                    .filter('_type == "safetyAndProtection" && safetyType == "sexualExploitation"')
-                ),
-              S.listItem()
-                .title('Labour Exploitation')
-                .child(
-                  S.documentList()
-                    .title('Labour Exploitation')
-                    .filter('_type == "safetyAndProtection" && safetyType == "labourExploitation"')
-                )
-            ])
-        ),
+        .items([
+          S.listItem()
+          .title('Emergency Services & Police')
+          .child(
+            S.documentList()
+            .title('Emergency Services & Police')
+            .filter('_type == "emergencyPolice"')
+          ),
+          S.listItem()
+          .title('Domestic Violence')
+          .child(
+            S.documentList()
+            .title('Domestic Violence')
+            .filter('_type == "domesticViolence"')
+          ),
+          S.listItem()
+          .title('Criminal Exploitation')
+          .child(
+            S.documentList()
+            .title('Criminal Exploitation')
+            .filter('_type == "criminalExploitation"')
+          ),
+          S.listItem()
+          .title('Sexual Exploitation')
+          .child(
+            S.documentList()
+            .title('Sexual Exploitation')
+            .filter('_type == "sexualExploitation"')
+          ),
+          S.listItem()
+          .title('Labour Exploitation')
+          .child(
+            S.documentList()
+            .title('Labour Exploitation')
+            .filter('_type == "labourExploitation"')
+          ),
+
+        ])
+         
+      ),
     ]) 

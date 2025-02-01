@@ -12,6 +12,14 @@ import {
   hygieneType,
 } from './healthWellbeingType'
 
+import {
+    emergencyPoliceType,
+    domesticViolenceType,
+    criminalExploitationType,
+    sexualExploitationType,
+    labourExploitationType,
+  } from './safetyProtectionType'
+
 export const schemaTypes = [
   shelterType,
   dentistType,
@@ -24,6 +32,11 @@ export const schemaTypes = [
   sexualHealthType,
   mentalWellbeingType,
   hygieneType,
+  emergencyPoliceType,
+  domesticViolenceType,
+  criminalExploitationType,
+  sexualExploitationType,
+  labourExploitationType,
 ]
 
 console.log(schemaTypes)
