@@ -1,8 +1,8 @@
 import { defineField, defineType } from "sanity"; 
 
-export const foodClothingType = defineType({ 
-    name: 'foodAndClothing',
-    title: 'Food and Clothing',
+export const safetyProtectionType = defineType({ 
+    name: 'safetyAndProtection',
+    title: 'Safety and Proctection',
     type: 'document',
     fields: [
       defineField({
@@ -79,13 +79,16 @@ export const foodClothingType = defineType({
         description: 'Provide important details, like documents required or rules to follow.',
       }),
       defineField({
-        name: 'foodOrClothing',
-        title: 'Food or Clothing',
+        name: 'safetyType',
+        title: 'Type of Protection and Safety',
         type: 'string',
         options: {
           list: [
-            {title: 'Food', value: 'food'},
-            {title: 'Clothing', value: 'clothing'},
+            {title: 'Emergency Services & Police', value: 'emergencyPolice'},
+            {title: 'Domestic Violence', value: 'domesticViolence'},
+            {title: 'Criminal Exploitation', value: 'criminalExploitation'},
+            {title: 'Sexual Exploitation', value: 'sexualExploitation'},
+            {title: 'Labour Exploitation', value: 'labourExploitation'},
           ],
         },
         validation: (rule) => rule.required(),

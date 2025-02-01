@@ -1,14 +1,13 @@
 import { defineField, defineType } from "sanity"; 
 
-// Create a base dentist type with shared fields
-export const dentistType = defineType({ 
-    name: 'dentist',
-    title: 'Dentist',
+export const workType = defineType({ 
+    name: 'work',
+    title: 'Work',
     type: 'document',
     fields: [
       defineField({
         name: 'name',
-        title: 'Dentist Name',
+        title: 'Labour Rights Information',
         type: 'string',
         validation: (rule) => rule.required(),
       }),
@@ -32,13 +31,9 @@ export const dentistType = defineType({
         }],
       }),
       defineField({
-        name: 'emergencyContact',
-        title: 'Emergency Contact',
-        type: 'object',
-        fields: [
-          { name: 'phone', title: 'Phone', type: 'string' },
-          { name: 'hours', title: 'Hours', type: 'string' },
-        ],
+        name: 'needToKnow',
+        title: 'What do you need to know?',
+        type: 'markdown',
       }),
       defineField({
         name: 'website',
@@ -46,27 +41,32 @@ export const dentistType = defineType({
         type: 'url',
       }),
       defineField({
-        name: 'needToKnow',
-        title: 'What do you need to know?',
-        type: 'markdown',
-      }),
-      defineField({
         name: 'email',
         title: 'Email',
         type: 'string',
       }),
       defineField({
-        name: 'phoneNumbers',
-        title: 'Phone Numbers',
+        name: 'flyers',
+        title: 'Flyers',
         type: 'array',
         of: [{
           type: 'object',
           fields: [
-            { name: 'type', title: 'Type', type: 'string', description: 'E.g., Reception, Emergency' },
-            { name: 'number', title: 'Number', type: 'string' },
+            { 
+              name: 'language', 
+              title: 'Flyer Language', 
+              type: 'string', 
+              description: 'Specify the language of the flyer (e.g., English, Spanish).' 
+            },
+            { 
+              name: 'link', 
+              title: 'Flyer PDF Link', 
+              type: 'url',
+              description: 'Link to the PDF version of the flyer.',
+            },
           ],
         }],
-      }),
+      }),      
       defineField({
         name: 'address',
         title: 'Address',

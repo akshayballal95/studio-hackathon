@@ -1,6 +1,5 @@
 import { defineField, defineType } from "sanity"; 
 
-// Create a base dentist type with shared fields
 export const legalType = defineType({ 
     name: 'legal',
     title: 'Legal',

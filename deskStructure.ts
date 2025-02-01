@@ -25,7 +25,14 @@ export const deskStructure = (S: StructureBuilder) =>
         .child(
         S.documentList()
           .title('Legal')
-          .filter('_type == "legal"')
+          .filter('_type == "legal"'),
+        ),
+        S.listItem()
+        .title('Work')
+        .child(
+        S.documentList()
+          .title('Labour Rights Information')
+          .filter('_type == "work"')
       ),
       
       // Shelters category
@@ -80,5 +87,48 @@ export const deskStructure = (S: StructureBuilder) =>
                     .filter('_type == "foodAndClothing" && foodOrClothing == "clothing"')
                 )
             ])
-        )
+        ),
+        S.listItem()
+        .title('Safety and Protection')
+        .child(
+          S.list()
+            .title('Safety and Protection')
+            .items([
+              S.listItem()
+                .title('Emergency Services & Police')
+                .child(
+                  S.documentList()
+                    .title('Emergency Services & Police')
+                    .filter('_type == "safetyAndProtection" && safetyType == "emergencyPolice"')
+                ),
+              S.listItem()
+                .title('Domestic Violence')
+                .child(
+                  S.documentList()
+                    .title('Domestic Violence')
+                    .filter('_type == "safetyAndProtection" && safetyType == "domesticViolence"')
+                ),
+              S.listItem()
+                .title('Criminal Exploitation')
+                .child(
+                  S.documentList()
+                    .title('Criminal Exploitation')
+                    .filter('_type == "safetyAndProtection" && safetyType == "criminalExploitation"')
+                ),
+              S.listItem()
+                .title('Sexual Exploitation')
+                .child(
+                  S.documentList()
+                    .title('Sexual Exploitation')
+                    .filter('_type == "safetyAndProtection" && safetyType == "sexualExploitation"')
+                ),
+              S.listItem()
+                .title('Labour Exploitation')
+                .child(
+                  S.documentList()
+                    .title('Labour Exploitation')
+                    .filter('_type == "safetyAndProtection" && safetyType == "labourExploitation"')
+                )
+            ])
+        ),
     ]) 
