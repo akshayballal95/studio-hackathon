@@ -2,6 +2,7 @@ import {shelterType} from './shelterTypes'
 import {dentistType} from './dentistsType'
 import {foodClothingType} from './foodClothingType'
 import {legalType} from './legalType'
+import {workType} from './workType'
 import {
   healthAndWellbeingType,
   emergencyLinesType,
@@ -37,6 +38,7 @@ export const schemaTypes = [
   criminalExploitationType,
   sexualExploitationType,
   labourExploitationType,
+  workType,
 ]
 
 console.log(schemaTypes)
