@@ -1,14 +1,14 @@
 import { defineField, defineType } from "sanity"; 
 
-// Create a base dentist type with shared fields
-export const dentistType = defineType({ 
-    name: 'dentist',
-    title: 'Dentist',
+// Create a base whereToGo type with shared fields
+export const whereToGoType = defineType({ 
+    name: 'whereToGo',
+    title: 'Where to go First',
     type: 'document',
     fields: [
       defineField({
         name: 'name',
-        title: 'Dentist Name',
+        title: 'Where to Go First',
         type: 'string',
         validation: (rule) => rule.required(),
       }),

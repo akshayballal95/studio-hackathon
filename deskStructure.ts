@@ -27,14 +27,21 @@ export const deskStructure = (S: StructureBuilder) =>
           .title('Legal')
           .filter('_type == "legal"'),
         ),
-        S.listItem()
+      S.listItem()
         .title('Work')
         .child(
         S.documentList()
           .title('Labour Rights Information')
           .filter('_type == "work"')
       ),
-      
+      S.listItem()
+        .title('Where to go first')
+        .child(
+        S.documentList()
+          .title('Where to go first')
+          .filter('_type == "whereToGo"')
+      ),
+
       // Shelters category
       S.listItem()
         .title('Shelters')
@@ -191,8 +198,71 @@ export const deskStructure = (S: StructureBuilder) =>
             .title('Labour Exploitation')
             .filter('_type == "labourExploitation"')
           ),
-
+        ]) 
+      ),
+      S.listItem()
+      .title("Asylum and Return")
+      .child(
+        S.list()
+        .title('Asylum and Return')
+        .items([
+          S.listItem()
+          .title('First Asylum Request')
+          .child(
+            S.documentList()
+            .title('First Asylum Request')
+            .filter('_type == "firstAsylumRequest"')
+          ),
+          S.listItem()
+          .title('Legal Advice After Rejection')
+          .child(
+            S.documentList()
+            .title('Legal Advice After Rejection')
+            .filter('_type == "afterRejection"')
+          ),
+          S.listItem()
+          .title('Support with Voluntary Return')
+          .child(
+            S.documentList()
+            .title('Support with Voluntary Return')
+            .filter('_type == "voluntaryReturn"')
+          ),
         ])
-         
+      ),
+      S.listItem()
+      .title("Support for Women")
+      .child(
+        S.list()
+        .title('Support for Women')
+        .items([
+          S.listItem()
+          .title('Pregnancy Care')
+          .child(
+            S.documentList()
+            .title('Pregnancy Care')
+            .filter('_type == "pregnancyCare"')
+          ),
+          S.listItem()
+          .title('Birth Control and Menstruation')
+          .child(
+            S.documentList()
+            .title('Birth Control and Menstruation')
+            .filter('_type == "birthControlAndMenstruation"')
+          ),
+          S.listItem()
+          .title('Organizations that can help')
+          .child(
+            S.documentList()
+            .title('Legal Advice After Rejection')
+            .filter('_type == "organizationsThatCanHelp"')
+          ),
+          S.listItem()
+          .title('Abortion')
+          .child(
+            S.documentList()
+            .title('Abortion')
+            .filter('_type == "abortion"')
+          ),
+        ])
       ),
     ]) 
